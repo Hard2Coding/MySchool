@@ -1,0 +1,44 @@
+# Dependencies
+node_modules/
+package-lock.json.bak
+
+# Expo
+.expo/
+dist/
+web-build/
+
+# Environment files & Secrets
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+!.env.example
+
+# Native builds (if using prebuild / bare workflow)
+ios/
+android/
+
+# Metro
+.metro-health-check*
+
+# OS & IDE artifacts
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs & Temp files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+scratch/
+test.py

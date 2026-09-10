@@ -1,189 +1,194 @@
 # 🏫 MySchool — Next-Gen School Portal & AI Assistant
 
-> **ระบบพอร์ทัลโรงเรียนและผู้ช่วยอัจฉริยะแบบครบวงจร (Student Information System & AI Assistant)**  
-> พัฒนาด้วย **React Native (Expo SDK 54)** เพื่อเชื่อมโยง 4 บทบาทสำคัญ: **นักเรียน**, **ผู้ปกครอง**, **ครูผู้สอน**, และ **ผู้ดูแลระบบ (Admin)** พร้อมระบบจำลองข้อมูล (Mock Data) และการเชื่อมต่อ AI (Google Gemini API)
+> **Comprehensive Student Information System & AI Assistant**  
+> Built with **React Native (Expo SDK 54)** to seamlessly connect 4 key roles: **Students**, **Parents**, **Teachers**, and **School Administrators (Admin)**. Features realistic Mock Data simulation and **Google Gemini AI API** integration.
 
 ---
 
-## 📌 ภาพรวมของแอปพลิเคชัน (About The App)
+## 📌 Project Overview
 
-**MySchool** ถูกออกแบบมาเพื่อยกระดับการศึกษาและการดูแลผู้เรียนอย่างรอบด้าน ภายใต้แนวคิด 4 เสาหลัก:
-1. **MySkill (Personalized Learning Path)** — ช่วยนักเรียนวิเคราะห์จุดแข็ง-จุดอ่อน และจัดแผนการเรียนรู้เฉพาะบุคคล
-2. **AI Teacher Copilot** — เครื่องมือช่วยครูผู้สอน เช็กชื่อ, บันทึกคะแนน, สร้างแบบทดสอบ และระบบ Health Warning แจ้งเตือนนักเรียนที่ควรติดตาม
-3. **AI Family Advisor** — ช่วยให้ผู้ปกครองติดตามผลการเรียน การเข้าเรียน การบ้าน ค่าเทอม และเข้าใจพฤติกรรมของบุตรหลาน
-4. **Mental Wellness & Early Warning** — ระบบเช็กอินสุขภาพใจรายวัน (Daily Check-in) คัดกรองสัญญาณเตือนเพื่อดูแลสุขภาพจิตและกายของนักเรียนตั้งแต่เนิ่นๆ โดยยึดหลักความเป็นส่วนตัว (PDPA)
+**MySchool** is designed to elevate modern education and holistic student well-being based on 4 core pillars:
+
+1. **MySkill (Personalized Learning Path)** — Analyzes individual strengths and weaknesses to provide personalized learning recommendations and career pathway exploration.
+2. **AI Teacher Copilot & Early Warning** — Equips teachers with rapid attendance taking, grade recording, AI quiz generation, and student risk alerts (Health Warning).
+3. **AI Family Advisor & Parent Portal** — Empowers parents to monitor attendance, track academic progress, review homework/tuition fees, and receive tailored parenting insights.
+4. **Mental Wellness & Daily Check-in** — Daily student mood & stress check-ins with early warning triggers and privacy-first parental sharing controls (PDPA compliant).
 
 ---
 
-## 🔑 บัญชีทดลองใช้งานสำหรับเข้าสู่ระบบ (Demo Login Credentials)
+## 🔑 Demo Login Credentials
 
-ระบบมีข้อมูล Mock Account พร้อมให้ทดสอบเข้าใช้งานได้ทันที:
+The application includes built-in mock accounts ready for immediate testing:
 
-| บทบาท (Role) | รหัสผู้ใช้ (Username) | รหัสผ่าน (Password) | รายละเอียด / สิทธิ์การใช้งาน |
+| Role | Username | Password | Account Details & Permissions |
 |---|---|---|---|
-| **นักเรียน (Student)** | `12345` | `123` | สมหญิง ใจดี (ม.5/2) — ตารางเรียน, คะแนน, MySkill, แชท AI, บัตรนักเรียนดิจิทัล |
-| **ผู้ปกครอง (Parent)** | `12345` | `123` | คุณสมชาย ใจดี — ผปค. ของสมหญิง (เลือกเข้าสู่ระบบในบทบาทผู้ปกครอง) |
-| **ครูผู้สอน (Teacher)** | `teacher` | `123` | ครูสมศักดิ์ สดใส — ตารางสอน, เช็กชื่อ, บันทึกคะแนน, Health Warning, AI สร้างข้อสอบ |
-| **ผู้ดูแลระบบ (Admin)** | `admin` | `123` | ฝ่าย ICT — Dashboard สถิติโรงเรียน, จัดการบัญชี, ตั้งค่าระบบ และ Audit Log |
+| **Student** | `12345` | `123` | Somying Jaidee (Grade 11/2) — Class Schedule, Grades, MySkill, AI Tutor, Digital Student Card |
+| **Parent** | `12345` | `123` | Somchai Jaidee — Parent of Somying (Select Parent role at login) |
+| **Teacher** | `teacher` | `123` | Somsak Sodsai — Teaching Schedule, Attendance, Gradebook, Health Warning, AI Quiz Generator |
+| **Admin** | `admin` | `123` | ICT & Academic Affairs — School Analytics Dashboard, User Management, Audit Logs, System Settings |
 
-> 💡 **หมายเหตุ:** บัญชี `12345` สามารถเข้าได้ทั้งในฐานะนักเรียนและผู้ปกครอง โดยระบบจะแสดงหน้าจอเลือกบทบาทหลังจากล็อกอิน และสามารถกด **"สลับบทบาทผู้ใช้งาน"** ได้ตลอดเวลาในหน้าโปรไฟล์
+> 💡 **Multi-Role Switching:** The `12345` account is linked to both Student and Parent roles. You can choose your role after logging in or instantly switch roles anytime from the **Profile** screen.
 
 ---
 
-## 🚀 วิธีติดตั้งและเริ่มต้นใช้งาน (Installation & Setup)
+## 🚀 Installation & Getting Started
 
-### 1. ความต้องการเบื้องต้น (Prerequisites)
-* ติดตั้ง [Node.js](https://nodejs.org/) (เวอร์ชัน LTS แนะนำ Node 18 หรือใหม่กว่า)
-* ติดตั้งแอปพลิเคชัน **Expo Go** บนมือถือของคุณ (iOS App Store หรือ Android Play Store)
+### 1. Prerequisites
+* [Node.js](https://nodejs.org/) (LTS version recommended, Node 18 or newer)
+* **Expo Go** mobile app installed on your device ([iOS App Store](https://apps.apple.com/app/expo-go/id982107779) or [Google Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent))
 
-### 2. ติดตั้ง Dependencies
-เปิด Terminal ในโฟลเดอร์โปรเจกต์ แล้วรันคำสั่ง:
+### 2. Install Dependencies
+Open your terminal in the project root directory and run:
 ```bash
 npm install
 ```
 
-### 3. ตั้งค่า Gemini API Key (สำหรับฟีเจอร์ AI Assistant)
-1. ขอรับ Gemini API Key ฟรีได้ที่ [Google AI Studio](https://aistudio.google.com/apikey)
-2. สร้างไฟล์ `.env` โดยคัดลอกจาก `.env.example`:
+### 3. Configure Gemini AI API Key
+1. Get a free Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey).
+2. Create your `.env` file from `.env.example`:
    ```bash
    cp .env.example .env
    ```
-3. เปิดไฟล์ `.env` แล้วระบุ API Key ของคุณ:
+3. Open `.env` and add your API key:
    ```env
    EXPO_PUBLIC_GEMINI_API_KEY="AIzaSy...your-actual-api-key"
    ```
 
-### 4. รันโปรเจกต์ (Start the App)
+### 4. Start the Application
 ```bash
 npx expo start
 ```
-* **iOS (เปิดใน Simulator):** กดปุ่ม `i` ใน terminal
-* **Android (เปิดใน Emulator):** กดปุ่ม `a` ใน terminal
-* **Web (เปิดบนเบราว์เซอร์):** กดปุ่ม `w` ใน terminal
-* **เปิดบนอุปกรณ์จริง:** เปิดแอป **Expo Go** แล้วสแกน QR Code (โทรศัพท์และคอมพิวเตอร์ต้องอยู่ในเครือข่าย Wi-Fi เดียวกัน)
-  * *หากสแกนแล้วต่อไม่ติด ให้ใช้โหมด Tunnel:* `npx expo start --tunnel`
+* **iOS Simulator:** Press `i` in the terminal
+* **Android Emulator:** Press `a` in the terminal
+* **Web Browser:** Press `w` in the terminal
+* **Physical Device:** Open **Expo Go** on your phone and scan the QR code displayed in the terminal (ensure your phone and computer are on the same Wi-Fi network).
+  * *If network discovery fails, use Tunnel mode:* `npx expo start --tunnel`
 
 ---
 
-## ⚙️ หลักการทำงานและสถาปัตยกรรมระบบ (System Architecture)
+## ⚙️ System Architecture & Workflow
 
 ```
                        ┌─────────────────────────────────┐
                        │          App.js (Root)          │
-                       │  • Kanit Font Loader            │
+                       │  • Custom Fonts (Kanit)         │
                        │  • AuthProvider (Context)       │
                        └────────────────┬────────────────┘
                                         │
                        ┌────────────────▼────────────────┐
                        │      RootNavigator (Stack)      │
                        │  • Login / Role Selection       │
-                       │  • Dynamic Role Tabs Routing    │
+                       │  • Dynamic Role Tab Routing     │
                        │  • Modal & Slide Transitions    │
                        └────────────────┬────────────────┘
                                         │
-      ┌──────────────────┬──────────────┴─────┬──────────────────┐
-      │                  │                    │                  │
-┌─────▼──────┐    ┌──────▼─────┐       ┌──────▼─────┐     ┌──────▼─────┐
-│  Student   │    │   Parent   │       │  Teacher   │     │   Admin    │
-│    Tabs    │    │    Tabs    │       │    Tabs    │     │    Tabs    │
-└─────┬──────┘    └──────┬─────┘       └──────┬─────┘     └──────┬─────┘
-      │                  │                    │                  │
-      └──────────────────┴──────────────┬─────┴──────────────────┘
+       ┌──────────────────┬──────────────┴─────┬──────────────────┐
+       │                  │                    │                  │
+ ┌─────▼──────┐    ┌──────▼─────┐       ┌──────▼─────┐     ┌──────▼─────┐
+ │  Student   │    │   Parent   │       │  Teacher   │     │   Admin    │
+ │    Tabs    │    │    Tabs    │       │    Tabs    │     │    Tabs    │
+ └─────┬──────┘    └──────┬─────┘       └──────┬─────┘     └──────┬─────┘
+       │                  │                    │                  │
+       └──────────────────┴──────────────┬─────┴──────────────────┘
                                         │
-         ┌──────────────────────────────┼──────────────────────────────┐
-         │                              │                              │
-┌────────▼──────────┐         ┌─────────▼─────────┐          ┌─────────▼─────────┐
-│   Mock Database   │         │   AI Integration  │          │   Design System   │
-│ (src/data/mock.js)│         │ (Gemini API Call) │          │(colors/typography)│
-└───────────────────┘         └───────────────────┘          └───────────────────┘
+          ┌──────────────────────────────┼──────────────────────────────┐
+          │                              │                              │
+ ┌────────▼──────────┐         ┌─────────▼─────────┐          ┌─────────▼─────────┐
+ │   Mock Database   │         │   AI Integration  │          │   Design System   │
+ │ (src/data/mock.js)│         │ (Gemini API Call) │          │(colors/typography)│
+ └───────────────────┘         └───────────────────┘          └───────────────────┘
 ```
 
-### 1. การจัดการสถานะและการเข้าสู่ระบบ (Authentication & Role Management)
-* ใช้ **React Context API** ([src/context/AuthContext.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/context/AuthContext.js)) จัดการ State การล็อกอิน
-* รองรับ **Multi-Role Switching**: ผู้ใช้คนเดียวที่มีหลายสิทธิ์ (เช่น นักเรียน + ผู้ปกครอง) สามารถสลับสิทธิ์การทำงานได้ทันทีโดยไม่ต้องล็อกเอาต์
+### 1. State & Authentication Management
+* Managed via **React Context API** (`src/context/AuthContext.js`).
+* Supports **Multi-Role Switching**: Seamlessly switch between active roles without logging out.
 
-### 2. การนำทาง (Navigation Structure)
-* ควบคุมโดย [src/navigation/RootNavigator.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/navigation/RootNavigator.js)
-* หน้าหลักของแต่ละ Role เป็น Bottom Tab Navigation แยกอิสระ:
-  * **StudentTabs:** หน้าหลัก, รายวิชา, คะแนน, โปรไฟล์
-  * **ParentTabs:** หน้าหลัก, การเข้าเรียน, สุขภาวะ, โปรไฟล์
-  * **TeacherTabs:** ภาพรวม, จัดการเรียนการสอน, ประกาศ/แชท, โปรไฟล์
-  * **AdminTabs:** ภาพรวมสถิติ, จัดการระบบและสิทธิ์, โปรไฟล์
-* หน้าคำร้อง ฟอร์มแก้ไข และเครื่องมือต่างๆ เปิดแบบ Native Modals พร้อม Transition Animation ที่ลื่นไหล
+### 2. Navigation Flow
+* Controlled by `src/navigation/RootNavigator.js`.
+* Each role features an independent Bottom Tab Navigator:
+  * **StudentTabs:** Home, Classes, Grades, Profile
+  * **ParentTabs:** Dashboard, Attendance, Child Wellness, Profile
+  * **TeacherTabs:** Dashboard, Classes & Teaching, Inbox/Announcements, Profile
+  * **AdminTabs:** Analytics Dashboard, System Management & Users, Profile
+* Modals, forms, and detail views are presented with smooth native slide/fade transitions.
 
-### 3. การเชื่อมต่อ AI (Google Gemini API)
-* ฟังก์ชันเรียก API อยู่ที่ [src/services/gemini.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/services/gemini.js) (ใช้ HTTP `fetch` แบบ lightweight)
-* **AI ผู้ช่วยการเรียนรู้ (Student):** ปรับ System Prompt ตามบริบทของแต่ละรายวิชา
-* **AI Chat ครูที่ปรึกษา:** ให้คำปรึกษาและตอบคำถามนักเรียน/ผู้ปกครองตาม Persona
-* **AI Quiz Generator (Teacher):** แนวคิดการช่วยครูร่างข้อสอบอัตโนมัติ
-
----
-
-## ✨ ฟีเจอร์เด่นตามบทบาทผู้ใช้งาน (Features by Role)
-
-### 👨‍🎓 1. นักเรียน (Student)
-* **Digital Student ID:** บัตรนักเรียนเสมือนจริงแบบเต็มจอ พร้อม QR Code และ Barcode ที่สแกนได้จริง
-* **AI Learning Assistant:** แชทถาม-ตอบบทเรียนในแต่ละวิชาพร้อม Quick Prompts
-* **MySkill:** วางแผนการเรียนรายบุคคลตามจุดแข็ง-จุดอ่อน และโหมดจำลองการดาวน์โหลดบทเรียนออฟไลน์
-* **Mental Wellness Daily Check-in:** บันทึกอารมณ์/ความเครียดรายวัน พร้อมสิทธิ์เลือกแชร์ข้อมูลให้ผู้ปกครอง (PDPA)
-* **ผลการเรียน & ตารางเรียน:** ดูผลการเรียนสะสม เกรดรายวิชา และตารางเรียนประจำวัน
-* **ยื่นคำร้องออนไลน์:** ส่งคำร้องลาป่วย/ลากิจ และติดตามสถานะการอนุมัติ
-
-### 👨‍👩‍👧 2. ผู้ปกครอง (Parent)
-* **ภาพรวมการเรียนของบุตร:** ดูเวลาเข้าเรียน อัตราการมาเรียน และการบ้านที่ค้างส่ง
-* **Child Wellness Overview:** ติดตามสุขภาวะของบุตรหลาน (เฉพาะข้อมูลที่นักเรียนอนุญาตให้แชร์) พร้อมคำแนะนำสำหรับพ่อแม่
-* **ชำระค่าธรรมเนียมออนไลน์:** ดูยอดค่าเทอม ประวัติการชำระ และใบเสร็จรับเงิน
-* **ติดต่อครูที่ปรึกษา:** ส่งข้อความปรึกษาครูประจำชั้นผ่านระบบแชท
-
-### 👩‍🏫 3. ครูผู้สอน (Teacher)
-* **ระบบเช็กชื่อเข้าเรียน (Attendance):** บันทึกการ มา/สาย/ขาด/ลา ได้สะดวกรวดเร็ว
-* **บันทึกคะแนนเก็บและคะแนนสอบ:** กรอกคะแนนนักเรียนรายวิชา
-* **Health Warning (ระบบเตือนความเสี่ยง):** วิเคราะห์สัญญาณความเครียด การขาดเรียน และผลการเรียนตก เพื่อเข้าช่วยเหลือนักเรียนได้ทันท่วงที
-* **ระบบประกาศรายวิชา & อินบ็อกซ์ข้อความ:** สื่อสารกับนักเรียนและผู้ปกครองในความดูแล
-
-### 🛠️ 4. ผู้ดูแลระบบ (Admin)
-* **School Analytics:** แดชบอร์ดสรุปสถิติจำนวนนักเรียน ครู อัตราการเข้าเรียน และตัวชี้วัดโรงเรียน
-* **User & Role Management:** จัดการรายชื่อ รีเซ็ตรหัสผ่าน และกำหนดสิทธิ์การเข้าถึง (Permissions)
-* **System Settings & Audit Log:** บันทึกประวัติการทำงานในระบบ และตั้งค่าพิกัด GPS สำหรับการเช็กชื่อ
+### 3. Google Gemini AI Integration
+* Lightweight HTTP client in `src/services/gemini.js` invoking Google Gemini endpoints.
+* **AI Student Tutor & Assistant:** Context-aware subject study helper with pre-built quick prompts.
+* **AI Family Advisor:** Provides actionable parenting advice based on student academic trends.
+* **AI Teacher Copilot & Quiz Generator:** Generates structured multiple-choice quiz questions and teaching recommendations.
 
 ---
 
-## 📁 โครงสร้างโปรเจกต์ (Project Structure)
+## ✨ Features by User Role
+
+### 👨‍🎓 1. Student Portal
+* **Digital Student ID:** Fullscreen interactive ID card with scannable QR Code and Barcode.
+* **MySkill (Personalized Learning Path):** Diagnostic skill assessment, course recommendations, and offline course simulation.
+* **AI Learning Assistant & Tutor:** Interactive chat per subject with predefined question prompts.
+* **Mental Wellness Daily Check-in:** Daily mood and stress tracking with optional parent sharing settings.
+* **Grades & Academic Transcript:** GPA tracking, semester grade breakdowns, and credit summaries.
+* **Class Schedule & Course Details:** Daily timetable, room numbers, teacher info, and syllabus.
+* **Online Leave Request:** Submit sick/personal leave requests and track approval statuses in real-time.
+
+### 👨‍👩‍👧 2. Parent Portal
+* **Child Academic Overview:** Track real-time attendance percentage, exam grades, and pending homework assignments.
+* **Child Wellness Monitor:** View wellness check-in summaries shared by the student with personalized parenting guidance.
+* **Online Tuition & Fee Payment:** Review fee breakdowns, payment receipts, and payment status history.
+* **Teacher Advisory Chat:** Direct messaging channel with the homeroom teacher.
+
+### 👩‍🏫 3. Teacher Portal
+* **Attendance Management:** Fast roll-call interface (Present, Late, Absent, Leave) with instant summary stats.
+* **Gradebook & Score Recording:** Record mid-term, final, and assignment scores per subject and student.
+* **Health Warning & Risk Alert System:** Automated flags for academic drop-offs, high absenteeism, or chronic stress.
+* **AI Quiz Generator:** Prompt-based automated quiz question generator.
+* **Announcements & Inbox:** Send broadcast class announcements and communicate directly with parents and students.
+* **Behavior Score Adjustment:** Award merits and log demerit infractions with reasons.
+
+### 🛠️ 4. Administrator Portal
+* **School Analytics Dashboard:** High-level metrics for student enrollment, teacher headcounts, overall attendance, and GPA trends.
+* **User & Permissions Management:** Search users, create/edit accounts, reset passwords, and manage role permissions.
+* **System Settings & Audit Log:** Comprehensive system audit logs and GPS geofence configuration for campus check-ins.
+* **Broadcast Announcements:** School-wide urgent notices and bulletin broadcasts.
+
+---
+
+## 📁 Project Directory Structure
 
 ```
 CopyEstudy/
-├── App.js                     # จุดเริ่มต้นแอป (Font Loading & Providers)
-├── app.json                   # การตั้งค่า Expo / App Configuration
-├── .env.example               # ตัวอย่างไฟล์ Environment Variables
-├── .gitignore                 # กำหนดไฟล์ที่ไม่ต้องนำขึ้น Git
-├── assets/                    # รูปภาพ, ไอคอน, และ Avatars
-│   └── avatars/               # ภาพโปรไฟล์เริ่มต้น (student, teacher, parent, admin)
+├── App.js                     # Root Entry Point (Font Loading & AuthProvider)
+├── app.json                   # Expo Application Configuration
+├── .env.example               # Template for Environment Variables
+├── .gitignore                 # Git ignore rules
+├── assets/                    # Static Assets (Images, Icons, Avatars)
+│   └── avatars/               # Default profile avatars (student, teacher, parent, admin)
 └── src/
-    ├── components/            # UI Components ส่วนกลาง (Card, Button, Avatar, Chip ฯลฯ)
-    ├── context/               # React Context (AuthContext & Role State)
-    ├── data/                  # ข้อมูลจำลองทั้งหมด (mockData.js)
-    ├── navigation/            # ตัวจัดการเส้นทางและ Bottom Tabs (RootNavigator, Tabs)
-    ├── screens/               # หน้าจอทั้งหมดแยกตามบทบาท
-    │   ├── student/           # หน้าจอฝั่งนักเรียน (MySkill, Wellness, StudentCard ฯลฯ)
-    │   ├── teacher/           # หน้าจอฝั่งครู (HealthWarning, AIQuiz, Advisory ฯลฯ)
-    │   ├── parent/            # หน้าจอฝั่งผู้ปกครอง (ChildWellness, Payment ฯลฯ)
-    │   ├── admin/             # หน้าจอฝั่งแอดมิน (Analytics, UserManagement ฯลฯ)
-    │   └── shared/            # หน้าจอส่วนกลาง (EditProfile, ChangePassword, SharedChat)
-    ├── services/              # การเชื่อมต่อภายนอก (gemini.js)
-    └── theme/                 # Design System (colors, radius, typography)
+    ├── components/            # Reusable UI Components (Card, Button, Avatar, Chip, etc.)
+    ├── context/               # React Contexts (AuthContext & Role State)
+    ├── data/                  # Mock Dataset (mockData.js)
+    ├── navigation/            # Navigation Containers (RootNavigator, Role Tabs)
+    ├── screens/               # Screen Views grouped by user role
+    │   ├── student/           # Student Screens (HomeScreen, MySkill, Wellness, StudentCard, etc.)
+    │   ├── teacher/           # Teacher Screens (HealthWarning, AIQuiz, Attendance, RecordScores, etc.)
+    │   ├── parent/            # Parent Screens (ChildWellness, Payment, Attendance, Homework, etc.)
+    │   ├── admin/             # Admin Screens (Dashboard, Users, AuditLog, GPSSettings, etc.)
+    │   └── shared/            # Common Screens (EditProfile, ChangePassword, SharedChat)
+    ├── services/              # External Integrations (gemini.js)
+    └── theme/                 # Design System Tokens (colors, radius, typography)
 ```
 
 ---
 
-## 🎨 การปรับแต่งดีไซน์และข้อมูล (Customization)
+## 🎨 Customization Guide
 
-* **เปลี่ยนข้อมูล Mockup:** แก้ไขข้อมูลใน [src/data/mockData.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/data/mockData.js)
-* **เปลี่ยนรูปโปรไฟล์:** นำรูปภาพใหม่มาวางทับใน [assets/avatars/](file:///Users/thanakornm/Desktop/CopyEstudy/assets/avatars) โดยใช้ชื่อเดิม (`student.png`, `teacher.png`, `parent.png`, `admin.png`)
-* **ปรับเปลี่ยนธีมและสี:** แก้ไขที่ [src/theme/colors.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/theme/colors.js) และ [src/theme/typography.js](file:///Users/thanakornm/Desktop/CopyEstudy/src/theme/typography.js)
+* **Update Mock Data:** Edit `src/data/mockData.js` to modify sample students, courses, grades, announcements, or notifications.
+* **Change Profile Avatars:** Replace image files in `assets/avatars/` maintaining their filenames (`student.png`, `teacher.png`, `parent.png`, `admin.png`).
+* **Modify Theme Colors & Typography:** Adjust design tokens in `src/theme/colors.js` and `src/theme/typography.js`.
 
 ---
 
-## 📄 ลิขสิทธิ์ (License)
+## 📄 License
 
-โปรเจกต์นี้เผยแพร่ภายใต้สัญญาอนุญาต **[MIT License](LICENSE)**  
-Copyright (c) 2026 **Thanakorn Morasilp** & **สมาชิกทีม Butter C.U.P**
+This project is licensed under the **[MIT License](LICENSE)**.  
+Copyright (c) 2026 **Thanakorn Morasilp** & **Butter C.U.P Team Members**.
